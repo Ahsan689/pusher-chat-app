@@ -13,13 +13,11 @@ const Chat = ({ username, userLocation }) => {
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
     cluster: process.env.cluster,
     // use jwts in prod
-    channelAuthorization:{
-      authEndpoint: `api/pusher/auth`,
-    },
+    authEndpoint: `api/pusher/auth`,
     auth: { params: {username, userLocation}},
     // use webSocket only
-    enabledTransports: ['ws'],
-    forceTLS: true
+    // enabledTransports: ['ws'],
+    // forceTLS: true
   });
 
   const [chats, setChats] = useState([]);
