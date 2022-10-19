@@ -34,7 +34,10 @@ function MyApp({ Component, pageProps }) {
       const res = await axios.get(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=administrative_area_level_1&key=${process.env.NEXT_PUBLIC_G_KEY}`
       );
-      setUserLocation(res.data.results[0].formatted_address);
+      if(res?.data?.results[0]?.formatted_address){
+        setUserLocation(res?.data?.results[0]?.formatted_address);
+
+      }
     } catch (error) {
       console.error(error);
     }
