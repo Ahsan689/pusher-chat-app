@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "env": {
+      "APP_ID": 1493767,
+      "KEY": "5578c57ed806bde4ca3f",
+      "SECRET": "09d3089a1e5a8879f8cb",
+      "CLUSTER": "eu"
+    }
+  }
+  
