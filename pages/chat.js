@@ -14,8 +14,7 @@ const Chat = ({ username, userLocation }) => {
     cluster: process.env.cluster,
     // use jwts in prod
     authEndpoint: `api/pusher/auth`,
-    auth: { params: {username}},
-    // transports: ["websocket"] // use webSocket only
+    auth: { params: {username, userLocation}},
   });
 
   const [chats, setChats] = useState([]);
@@ -24,12 +23,6 @@ const Chat = ({ username, userLocation }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [usersRemoved, setUsersRemoved] = useState([]);
 
-  const messages = {
-    padding: '5% 0',
-    overflow: 'auto',
-    flex: 'auto',
-
-  }
 
   useEffect(() => {
     const channel = pusher.subscribe("presence-channel"); 
