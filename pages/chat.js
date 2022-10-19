@@ -107,7 +107,7 @@ const Chat = ({ username, userLocation }) => {
           </div>
 
           <div className="col-span-2 flex flex-col bg-purple-50 rounded-lg px-5 py-5"  >
-            <div className="pr-3" style={{overflow: 'auto',height:400}} >
+            <div  style={{overflow: 'auto',height:400, marginRight:20}} >
               <ScrollToBottom  style={{overflow: 'auto'}}>
                 {chats.map((chat, id) => (
                   <ChatList key={id} chat={chat} currentUser={username} />
