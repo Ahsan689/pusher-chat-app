@@ -14,7 +14,8 @@ const Chat = ({ username, userLocation }) => {
     cluster: process.env.cluster,
     // use jwts in prod
     authEndpoint: `api/pusher/auth`,
-    auth: { params: {username}}
+    auth: { params: {username}},
+    transports: ["websocket"] // use webSocket only
   });
 
   const [chats, setChats] = useState([]);
