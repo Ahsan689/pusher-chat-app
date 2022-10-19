@@ -16,7 +16,7 @@ const Chat = ({ username, userLocation }) => {
     authEndpoint: `api/pusher/auth`,
     auth: { params: {username, userLocation}},
     // use webSocket only
-    transports: ["websocket"] 
+    // transports: ["websocket"] 
   });
 
   const [chats, setChats] = useState([]);
