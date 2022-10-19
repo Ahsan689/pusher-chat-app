@@ -38,7 +38,7 @@ const Chat = ({ username, userLocation }) => {
       // total subscribed
       const {me :{info: {username}}} = members
       setOnlineUsersCount(members.count);
-      // console.log(username,"memeber");
+      console.log(members,"memeber");
       setChats((prevState) => [
         ...prevState,
         { username: 'admin', message:`Welcome ${username} to the chat-room`  },
