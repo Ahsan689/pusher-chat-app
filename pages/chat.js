@@ -15,6 +15,7 @@ const Chat = ({ username, userLocation }) => {
     // use jwts in prod
     authEndpoint: `api/pusher/auth`,
     auth: { params: {username, userLocation}},
+    transports: ["websocket"] // use webSocket only
   });
 
   const [chats, setChats] = useState([]);
