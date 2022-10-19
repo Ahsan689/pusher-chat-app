@@ -16,7 +16,7 @@ const Chat = ({ username, userLocation }) => {
     authEndpoint: `api/pusher/auth`,
     auth: { params: {username, userLocation}},
     // use webSocket only
-    // enabledTransports: ['ws'],
+    enabledTransports: ['ws'],
     // forceTLS: true
   });
 
