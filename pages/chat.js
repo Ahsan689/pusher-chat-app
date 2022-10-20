@@ -13,7 +13,7 @@ const Chat = ({ username, userLocation }) => {
   const url = 'http://localhost:8080/'
   const router = useRouter();
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
-    cluster: process.env.cluster,
+    cluster: 'ap1',
     // use jwts in prod
     authEndpoint: `api/pusher/auth`,
     auth: { params: {username}},
@@ -30,19 +30,19 @@ const Chat = ({ username, userLocation }) => {
   useEffect(() => {
     const channel = pusher.subscribe("presence-channel"); 
 
-    async function pushData(data) {
-      const res = await fetch('/api/pusher/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) {
-        console.error('failed to push data');
-      }
-    }
-    pushData(username)
+    // async function pushData(data) {
+    //   const res = await fetch('/api/pusher/auth', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
+    //   if (!res.ok) {
+    //     console.error('failed to push data');
+    //   }
+    // }
+    // pushData(username)
 
     // console.log(channel,'chenn');
 
