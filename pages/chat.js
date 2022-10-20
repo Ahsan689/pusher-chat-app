@@ -23,11 +23,11 @@ const Chat = ({ username, userLocation }) => {
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
     cluster: 'ap1',
     // use jwts in prod
-    httpsHost: 'https://pusher-chat-app-mu.vercel.app',
-    authEndpoint: '/api/pusher/auth',
+    // httpsHost: 'https://pusher-chat-app-mu.vercel.app',
+    endpoint: 'https://pusher-chat-app-mu.vercel.app/api/pusher/auth',
     transport: "ajax",
     auth: {
-        params: username,
+        params: {username},
         headers: {
             'X-CSRF-Token': '{{ csrf_token() }}'
         }
