@@ -20,25 +20,22 @@ const Chat = ({ username, userLocation }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [usersRemoved, setUsersRemoved] = useState([]);
 
-  let pusher = useRef(null) ;
+  // let pusher = useRef(null) ;
 
   useEffect(() => {
 
-    pusher.current = new Pusher(process.env.NEXT_PUBLIC_KEY, {
+    const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
       cluster: 'ap1',
       // use jwts in prod
 
-      userAuthentication:{
-        endpoint: 'api/pusher/auth',
-        // auth: { params: {username}},
-  
-      },
+      authEndpoint: `api/pusher/auth`,
+      auth: { params: {username}},
+     
       // transport: "ajax",
-      // authEndpoint: `api/pusher/auth`,
       // use webSocket only
     });
 
-    const channel = pusher.current.subscribe("presence-channel"); 
+    const channel = pusher.subscribe("presence-channel"); 
     console.log(channel,'chennallll');
 
 
@@ -84,12 +81,12 @@ const Chat = ({ username, userLocation }) => {
     });
 
     return () => {
-      pusher.current.unsubscribe("presence-channel");
+      pusher.unsubscribe("presence-channel");
     };
   }, []);
 
   const handleSignOut = () => {
-    pusher.current.unsubscribe("presence-channel");
+    // pusher.current.unsubscribe("presence-channel");
     router.push("/");
   };
 
