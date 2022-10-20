@@ -15,8 +15,8 @@ const Chat = ({ username, userLocation }) => {
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
     cluster: 'ap1',
     // use jwts in prod
-    authEndpoint: `api/pusher/auth`,
-    auth: { params: {username}},
+    // authEndpoint: `api/pusher/auth`,
+    // auth: { params: {username}},
     // use webSocket only
   });
 
@@ -30,19 +30,19 @@ const Chat = ({ username, userLocation }) => {
   useEffect(() => {
     const channel = pusher.subscribe("presence-channel"); 
 
-    // async function pushData(data) {
-    //   const res = await fetch('/api/pusher/auth', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
-    //   if (!res.ok) {
-    //     console.error('failed to push data');
-    //   }
-    // }
-    // pushData(username)
+    async function pushData(data) {
+      const res = await fetch('/api/pusher/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({auth: { params: {username}}}),
+      });
+      if (!res.ok) {
+        console.error('failed to push data');
+      }
+    }
+    pushData()
 
     // console.log(channel,'chenn');
 
