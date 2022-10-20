@@ -24,15 +24,15 @@ const Chat = ({ username, userLocation }) => {
     cluster: 'ap1',
     // use jwts in prod
     // httpsHost: 'https://pusher-chat-app-mu.vercel.app',
-    endpoint: 'api/pusher/auth',
-    // transport: "ajax",
-    enabledTransports:['ws', 'xhr_streaming'],
-    auth: {
-        params: {username},
-        // headers: {
-        //     'X-CSRF-Token': '{{ csrf_token() }}'
-        // }
+    userAuthentication:{
+      endpoint: 'api/pusher/auth',
+      transport: "jsonp",
+      auth: {
+          params: {username},
+      },
+
     },
+    // transport: "ajax",
     // authEndpoint: `api/pusher/auth`,
     // auth: { params: {username}},
     // use webSocket only
