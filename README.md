@@ -20,5 +20,5 @@ You'll also need to get a google API key to use the realtime location feature.
 ## Live
 The Live version of this app is available [here](https://pusher-chat-app-delta.vercel.app/)
 
-https://github.com/auth0/nextjs-auth0/issues/566
+<!-- https://github.com/auth0/nextjs-auth0/issues/566 -->
 
