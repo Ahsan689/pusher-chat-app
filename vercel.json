@@ -8,7 +8,7 @@
         "cluster": "ap1"
       },
       "functions": {
-        "api/pusher/auth": {
+        "https://pusher-chat-app-mu.vercel.app/api/pusher/auth": {
           "memory": 3008,
           "maxDuration": 60
         }
