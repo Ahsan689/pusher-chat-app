@@ -28,7 +28,7 @@ const Chat = ({ username, userLocation }) => {
       cluster: 'ap1',
       // use jwts in prod
 
-      authEndpoint: `api/pusher/auth`,
+      authEndpoint: 'api/pusher/auth',
       auth: { params: {username}},
      
       // transport: "ajax",
