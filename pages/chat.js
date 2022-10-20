@@ -32,6 +32,7 @@ const Chat = ({ username, userLocation }) => {
     });
     
     const channel = pusher.subscribe("presence-channel"); 
+    console.log(channel,'chennallll');
 
     // async function pushData(data) {
     //   const res = await fetch('/api/pusher/auth', {
@@ -47,7 +48,6 @@ const Chat = ({ username, userLocation }) => {
     // }
     // pushData()
 
-    // console.log(channel,'chenn');
 
 
     // when a new member successfully subscribes to the channel
