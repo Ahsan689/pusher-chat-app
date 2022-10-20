@@ -1,7 +1,11 @@
 {
+    "version": 2,
     "env": {
-        "app_id": "1493767",
-        "NEXT_PUBLIC_KEY": "5578c57ed806bde4ca3f",
+        "app_id": "@app_id",
+        "key": "5578c57ed806bde4ca3f",
+        "NEXT_PUBLIC_KEY": "@NEXT_PUBLIC_KEY",
+        "NEXT_PUBLIC_G_KEY": "@NEXT_PUBLIC_G_KEY",
+        "secret": "@secret",
         "cluster": "ap1"
       }
     
