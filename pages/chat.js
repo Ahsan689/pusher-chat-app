@@ -8,16 +8,16 @@ import Notifications from "../components/Notifications";
 import { useRouter } from "next/router";
 import ScrollToBottom from 'react-scroll-to-bottom';
 
+
 const Chat = ({ username, userLocation }) => {
+  const url = 'http://localhost:8080/'
   const router = useRouter();
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
     cluster: process.env.cluster,
     // use jwts in prod
     authEndpoint: `api/pusher/auth`,
-    auth: { params: {username, userLocation}},
+    auth: { params: {username}},
     // use webSocket only
-    enabledTransports: ['ws', 'xhr_streaming'],
-    // forceTLS: true
   });
 
   const [chats, setChats] = useState([]);
@@ -30,6 +30,7 @@ const Chat = ({ username, userLocation }) => {
   useEffect(() => {
     const channel = pusher.subscribe("presence-channel"); 
     // console.log(channel,'chenn');
+
 
     // when a new member successfully subscribes to the channel
     channel.bind("pusher:subscription_succeeded", (members) => {
