@@ -3,8 +3,7 @@
     "env": {
         "app_id": "@app_id",
         "key": "5578c57ed806bde4ca3f",
-        "NEXT_PUBLIC_KEY": "@NEXT_PUBLIC_KEY",
-        "NEXT_PUBLIC_G_KEY": "@NEXT_PUBLIC_G_KEY",
+        "NEXT_PUBLIC_KEY": "5578c57ed806bde4ca3f",
         "secret": "@secret",
         "cluster": "ap1"
       }
