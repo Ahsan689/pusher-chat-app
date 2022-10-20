@@ -1,4 +1,12 @@
 {
+    "env": {
+        "app_id": "app_id",
+        "key": "@key",
+        "NEXT_PUBLIC_KEY": "@NEXT_PUBLIC_KEY",
+        "NEXT_PUBLIC_G_KEY": "@NEXT_PUBLIC_G_KEY",
+        "secret": "@secret",
+        "cluster": "@cluster"
+      },
     "functions": {
       "pages/api/pusher/auth/index.js": {
         "memory": 3008,
