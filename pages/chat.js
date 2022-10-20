@@ -20,17 +20,17 @@ const Chat = ({ username, userLocation }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [usersRemoved, setUsersRemoved] = useState([]);
 
+  const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
+    cluster: 'ap1',
+    // use jwts in prod
+    authEndpoint: `api/pusher/auth`,
+    auth: { params: {username}},
+    // use webSocket only
+  });
+
 
   useEffect(() => {
 
-    const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
-      cluster: 'ap1',
-      // use jwts in prod
-      authEndpoint: `api/pusher/auth`,
-      auth: { params: {username}},
-      // use webSocket only
-    });
-    
     const channel = pusher.subscribe("presence-channel"); 
     console.log(channel,'chennallll');
 
