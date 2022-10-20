@@ -23,8 +23,13 @@ const Chat = ({ username, userLocation }) => {
   const pusher = new Pusher(process.env.NEXT_PUBLIC_KEY, {
     cluster: 'ap1',
     // use jwts in prod
-    authEndpoint: `api/pusher/auth`,
-    auth: { params: {username}},
+    channelAuthorization: {
+      endpoint: "api/pusher/auth",
+      transport: "ajax",
+      params: username,
+    },
+    // authEndpoint: `api/pusher/auth`,
+    // auth: { params: {username}},
     // use webSocket only
   });
 
