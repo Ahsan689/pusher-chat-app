@@ -1,4 +1,4 @@
-# Next.js + Pusher Channels
+<!-- # Next.js + Pusher Channels
 
 This example shows how to build a Realtime chat application with Pusher and Next.JS serverless functions. 
 
@@ -15,7 +15,10 @@ cluster
 You'll also need to get a google API key to use the realtime location feature. 
 
 - run `yarn install && yarn dev` then navigate to `localhost:3000` in your browser to see the application
-
+ -->
+ 
+# Next.js + Pusher Channels
+Realtime Chat Application with Pusher and Next.js Serverless functions. 
 
 ## Live
 The Live version of this app is available [here](https://pusher-chat-app-delta.vercel.app/)
